@@ -26,14 +26,23 @@ Sistem ini dirancang untuk mempermudah karyawan dalam melakukan absensi harian d
 ## ⚙️ Panduan Instalasi
 
 1. **Clone Repository**
+
    ```bash
    git clone [https://github.com/IZWAFAHZANALI/presensi.git](https://github.com/IZWAFAHZANALI/presensi.git)
    ```
-2. **Update Dependencies**
+
+2. **Persiapan Database (Import SQL)**
+   Sebelum menjalankan aplikasi, kamu perlu mengimpor struktur database:
+   1. Buka phpMyAdmin (localhost/phpmyadmin).
+   2. Buat database baru dengan nama db_presensi.
+   3. Klik tab Import di bagian menu atas.
+   4. Klik tombol Choose File dan pilih file db_presensi.sql yang sudah disediakan di folder database dalam repository ini.
+   5. Gulir ke bawah dan klik tombol Go atau Import.
+3. **Update Dependencies**
    ```bash
    composer update
    ```
-3. **Konfigurasi Environment**
+4. **Konfigurasi Environment**
    - Rename file env menjadi .env.
    - Sesuaikan pengaturan database:
    ```bash
@@ -42,7 +51,7 @@ Sistem ini dirancang untuk mempermudah karyawan dalam melakukan absensi harian d
    database.default.username = root
    database.default.password =
    ```
-4. **Jalankan Lokal Server**
+5. **Jalankan Lokal Server**
    ```bash
    php spark serve
    ```
@@ -50,4 +59,5 @@ Sistem ini dirancang untuk mempermudah karyawan dalam melakukan absensi harian d
 
 ## 👨‍💻 Developed By
 
-**IZWA FAHZAN ALI IT Consultant Intern Media Pratama Solusinet**
+**IZWA FAHZAN ALI**
+siswa PKL dari SMK NEGERI 1 ADIWERNA
