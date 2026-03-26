@@ -186,7 +186,7 @@
             <span style="color: #000066;">MEDIA PRATAMA</span> 
             <span style="color: #cc0000;">SOLUSINET</span>
         </h2>
-        <p class="subtitle">✨ IT Consultant ✨</p>
+        <p class="subtitle"> IT Consultant </p>
 
         <?php if(!empty(session()->getFlashdata('pesan'))) : ?>
             <div class="alert alert-cute alert-dismissible fade show" role="alert">
@@ -207,7 +207,7 @@
             </div>
 
             <button type="submit" class="btn-login">
-                Masuk Dashboard 🚀
+                Masuk Dashboard 
             </button>
         </form>
     </div>
