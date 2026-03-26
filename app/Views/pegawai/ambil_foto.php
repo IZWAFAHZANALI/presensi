@@ -141,7 +141,7 @@
                         <div class="col-12">
                             <div class="meta-item mt-2 pt-2 border-top">
                                 <span class="meta-label"><i class="bi bi-geo-alt-fill text-danger"></i> Titik Presensi</span>
-                                <span class="meta-value"><?= 'samy' . $lokasi_presensi ?></span>
+                                <span class="meta-value"><?= $lokasi_presensi ?></span>
                             </div>
                         </div>
                     </div>

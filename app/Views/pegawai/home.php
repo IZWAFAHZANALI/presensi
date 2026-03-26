@@ -282,6 +282,14 @@
     const officeLong = <?= $lokasi_presensi['longitude'] ?>;
     const officeRadius = <?= $lokasi_presensi['radius'] ?>;
 
+    // FIX: Mengatasi marker hilang/pecah pada Leaflet
+    delete L.Icon.Default.prototype._getIconUrl;
+    L.Icon.Default.mergeOptions({
+        iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    });
+
     function getLocation(){
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(showPosition, function(error) {
@@ -326,11 +334,15 @@
             weight: 2
         }).addTo(map);
 
-        var officeIcon = L.icon({
-            iconUrl: 'https://cdn-icons-png.flaticon.com/512/1686/1686810.png',
-            iconSize: [40, 40],
+        var officeIcon = L.divIcon({
+            html: '<i class="bi bi-building-fill text-danger" style="font-size: 30px;"></i>',
+            iconSize: [30, 30],
+            className: 'border-0 bg-transparent'
         });
-        L.marker([officeLat, officeLong], {icon: officeIcon}).addTo(map).bindPopup("<b>Kantor MPSNET</b>");
+        // Marker Kantor
+        L.marker([officeLat, officeLong], {icon: officeIcon}).addTo(map)
+            .bindPopup("<b>Kantor:</b><br><?= $lokasi_presensi['nama_lokasi'] ?>")
+            .openPopup();
 
         var userMarker = L.marker([lat_peg, long_peg]).addTo(map)
             .bindPopup("<b>Jarak:</b> " + Math.round(distance) + "m dari kantor")
