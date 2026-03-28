@@ -28,7 +28,6 @@
                                 <select name="jenis_kelamin" class="form-control <?= ($validation->hasError('jenis_kelamin')) ? 'is-invalid' : '' ?>">
                                     <option value="Laki-Laki" <?= ($pegawai['jenis_kelamin'] == 'Laki-Laki') ? 'selected' : '' ?>>Laki-Laki</option>
                                     <option value="Perempuan" <?= ($pegawai['jenis_kelamin'] == 'Perempuan') ? 'selected' : '' ?>>Perempuan</option>
-                                    <option value="Fauzan" <?= ($pegawai['jenis_kelamin'] == 'Fauzan') ? 'selected' : '' ?>>Fauzan</option>
                                 </select>
                                 <div class="invalid-feedback"><?= $validation->getError('jenis_kelamin') ?></div>
                             </div>

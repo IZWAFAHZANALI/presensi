@@ -26,7 +26,6 @@
                                 <option value="">-- Pilih Jenis Kelamin --</option>
                                 <option value="Laki-Laki" <?= old('jenis_kelamin') == 'Laki-Laki' ? 'selected' : '' ?>>Laki-Laki</option>
                                 <option value="Perempuan" <?= old('jenis_kelamin') == 'Perempuan' ? 'selected' : '' ?>>Perempuan</option>
-                                <option value="Fauzan" <?= old('jenis_kelamin') == 'Fauzan' ? 'selected' : '' ?>>Fauzan</option>
                             </select>
                             <div class="invalid-feedback"><?= $validation->getError('jenis_kelamin') ?></div>
                         </div>
